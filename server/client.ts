@@ -672,6 +672,18 @@ class Client {
 		return this.messageProvider.search(query);
 	}
 
+	async nickTopMessageHours(networkUuid: string, nick: string) {
+		if (!this.messageProvider?.isEnabled) {
+			return {
+				networkUuid,
+				nick,
+				result: {},
+			};
+		}
+
+		return this.messageProvider.nickTopMessageHours(networkUuid, nick);
+	}
+
 	async getMessagesAround(data: {target: number; time: number}) {
 		const target = this.find(data.target);
 

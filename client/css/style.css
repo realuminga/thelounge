@@ -98,16 +98,24 @@ body {
 body {
 	background: var(--body-bg-color);
 	color: var(--body-color);
-	font: 16px -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+	font:
+		16px -apple-system,
+		system-ui,
+		BlinkMacSystemFont,
+		"Segoe UI",
+		Roboto,
+		"Helvetica Neue",
+		Arial,
+		sans-serif;
 	margin: 0;
 	user-select: none;
 	cursor: default;
 	touch-action: none;
 
 	/**
-	  * Disable pull-to-refresh on mobile that conflicts with scrolling the message list.
-	  * See http://stackoverflow.com/a/29313685/1935861
-	  */
+	 * Disable pull-to-refresh on mobile that conflicts with scrolling the message list.
+	 * See http://stackoverflow.com/a/29313685/1935861
+	 */
 	overflow: hidden;
 	/* iOS Safari requires overflow rather than overflow-y */
 }
@@ -156,7 +164,9 @@ pre,
 #chat .msg[data-type="monospace_block"] .text,
 .irc-monospace,
 textarea#user-specified-css-input {
-	font-family: Consolas, Menlo, Monaco, "Lucida Console", "DejaVu Sans Mono", "Courier New", monospace;
+	font-family:
+		Consolas, Menlo, Monaco, "Lucida Console", "DejaVu Sans Mono", "Courier New",
+		monospace;
 }
 
 code,
@@ -196,7 +206,10 @@ kbd {
 	background-image: linear-gradient(180deg, rgb(0 0 0 / 5%), transparent);
 	border: 1px solid #bbb;
 	border-radius: 4px;
-	box-shadow: 0 2px 0 #bbb, inset 0 1px 1px #fff, inset 0 -1px 3px #ccc;
+	box-shadow:
+		0 2px 0 #bbb,
+		inset 0 1px 1px #fff,
+		inset 0 -1px 3px #ccc;
 }
 
 p {
@@ -214,7 +227,11 @@ p {
 	margin-bottom: 10px;
 	padding: 9px 17px;
 	text-transform: uppercase;
-	transition: background 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
+	transition:
+		background 0.2s,
+		border-color 0.2s,
+		color 0.2s,
+		box-shadow 0.2s;
 	word-spacing: 3px;
 	cursor: pointer;
 	/* This is useful for `<button>` elements */
@@ -280,7 +297,7 @@ p {
 }
 
 #chat #js-copy-hack .msg[data-type="condensed"]:not(.closed) .msg,
-#chat #js-copy-hack>.msg {
+#chat #js-copy-hack > .msg {
 	display: block;
 }
 
@@ -354,7 +371,7 @@ p {
 .jump-to-input::before,
 .password-container .reveal-password span,
 #sidebar .collapse-network-icon::before {
-	font: normal normal normal 14px/1 FontAwesome;
+	font: normal normal normal 14px / 1 FontAwesome;
 	font-size: inherit;
 	/* Can't have font-size inherit on line above, so need to override */
 	-webkit-font-smoothing: antialiased;
@@ -429,6 +446,11 @@ p {
 .context-menu-action-whois::before {
 	content: "\f05a";
 	/* http://fontawesome.io/icon/info-circle/  */
+}
+
+.context-menu-action-stats::before {
+	content: "\f080";
+	/* https://fontawesome.com/icons/chart-bar?style=solid */
 }
 
 .context-menu-action-slap::before {
@@ -518,7 +540,8 @@ p {
 
 .context-menu-item.context-menu-group-bot,
 .custom-group-header.group-header-bot {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(255, 215, 0);
 	}
 
@@ -529,7 +552,8 @@ p {
 
 .context-menu-item.context-menu-group-sysop,
 .custom-group-header.group-header-sysop {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(255, 0, 0);
 	}
 
@@ -540,7 +564,8 @@ p {
 
 .context-menu-item.context-menu-group-administrator,
 .custom-group-header.group-header-administrator {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(242, 59, 22);
 	}
 
@@ -551,7 +576,8 @@ p {
 
 .context-menu-item.context-menu-group-moderator,
 .custom-group-header.group-header-moderator {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(201, 26, 26);
 	}
 
@@ -562,7 +588,8 @@ p {
 
 .context-menu-item.context-menu-group-fls,
 .custom-group-header.group-header-fls {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(255, 211, 156);
 	}
 
@@ -573,7 +600,8 @@ p {
 
 .context-menu-item.context-menu-group-editor,
 .custom-group-header.group-header-editor {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(21, 176, 151);
 	}
 
@@ -584,7 +612,8 @@ p {
 
 .context-menu-item.context-menu-group-internal,
 .custom-group-header.group-header-internal {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(255, 77, 77);
 	}
 
@@ -595,7 +624,8 @@ p {
 
 .context-menu-item.context-menu-group-uploader,
 .custom-group-header.group-header-uploader {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(46, 204, 113);
 	}
 
@@ -606,7 +636,8 @@ p {
 
 .context-menu-item.context-menu-group-external,
 .custom-group-header.group-header-external {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(0, 153, 255);
 	}
 
@@ -617,7 +648,8 @@ p {
 
 .context-menu-item.context-menu-group-specialpool,
 .custom-group-header.group-header-specialpool {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(255, 215, 0);
 	}
 
@@ -628,7 +660,8 @@ p {
 
 .context-menu-item.context-menu-group-foundingpool,
 .custom-group-header.group-header-foundingpool {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(255, 132, 9);
 	}
 
@@ -639,7 +672,8 @@ p {
 
 .context-menu-item.context-menu-group-godpool,
 .custom-group-header.group-header-godpool {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(212, 172, 13);
 	}
 
@@ -650,7 +684,8 @@ p {
 
 .context-menu-item.context-menu-group-megapool,
 .custom-group-header.group-header-megapool {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(224, 138, 78);
 	}
 
@@ -661,7 +696,8 @@ p {
 
 .context-menu-item.context-menu-group-propool,
 .custom-group-header.group-header-propool {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(255, 215, 0);
 	}
 
@@ -672,7 +708,8 @@ p {
 
 .context-menu-item.context-menu-group-uberpool,
 .custom-group-header.group-header-uberpool {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(255, 255, 128);
 	}
 
@@ -683,7 +720,8 @@ p {
 
 .context-menu-item.context-menu-group-superpool,
 .custom-group-header.group-header-superpool {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(255, 132, 9);
 	}
 
@@ -694,7 +732,8 @@ p {
 
 .context-menu-item.context-menu-group-powerpool,
 .custom-group-header.group-header-powerpool {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(17, 85, 204);
 	}
 
@@ -705,7 +744,8 @@ p {
 
 .context-menu-item.context-menu-group-pool,
 .custom-group-header.group-header-pool {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(99, 230, 190);
 	}
 
@@ -716,7 +756,8 @@ p {
 
 .context-menu-item.context-menu-group-user,
 .custom-group-header.group-header-user {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(114, 137, 218);
 	}
 
@@ -727,7 +768,8 @@ p {
 
 .context-menu-item.context-menu-group-kiddiepool,
 .custom-group-header.group-header-kiddiepool {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(48, 47, 145);
 	}
 
@@ -738,7 +780,8 @@ p {
 
 .context-menu-item.context-menu-group-validating,
 .custom-group-header.group-header-validating {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(149, 165, 166);
 	}
 
@@ -749,7 +792,8 @@ p {
 
 .context-menu-item.context-menu-group-cesspool,
 .custom-group-header.group-header-cesspool {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(150, 75, 0);
 	}
 
@@ -760,7 +804,8 @@ p {
 
 .context-menu-item.context-menu-group-idlepool,
 .custom-group-header.group-header-idlepool {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(87, 87, 87);
 	}
 
@@ -771,7 +816,8 @@ p {
 
 .context-menu-item.context-menu-group-guest,
 .custom-group-header.group-header-guest {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(87, 87, 87);
 	}
 
@@ -782,7 +828,8 @@ p {
 
 .context-menu-item.context-menu-group-leech,
 .custom-group-header.group-header-leech {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(150, 40, 27);
 	}
 
@@ -793,7 +840,8 @@ p {
 
 .context-menu-item.context-menu-group-banned,
 .custom-group-header.group-header-banned {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(255, 0, 0);
 	}
 
@@ -804,7 +852,8 @@ p {
 
 .context-menu-item.context-menu-group-disabled,
 .custom-group-header.group-header-disabled {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(141, 98, 98);
 	}
 
@@ -815,7 +864,8 @@ p {
 
 .context-menu-item.context-menu-group-pruned,
 .custom-group-header.group-header-pruned {
-	&, &:hover {
+	&,
+	&:hover {
 		color: rgb(141, 98, 98);
 	}
 
@@ -1024,7 +1074,9 @@ p {
 
 #chat .toggle-button {
 	display: inline-block;
-	transition: opacity 0.2s, transform 0.2s;
+	transition:
+		opacity 0.2s,
+		transform 0.2s;
 
 	/* These 2 directives are loosely taken from .fa-fw */
 	width: 1.35em;
@@ -1364,7 +1416,9 @@ background on hover (unless active) */
 	color: #afb6c0;
 	font-size: 10px;
 	padding: 4px 6px;
-	transition: background-color 0.2s, color 0.2s;
+	transition:
+		background-color 0.2s,
+		color 0.2s;
 }
 
 .channel-list-item .badge:empty {
@@ -1380,7 +1434,9 @@ background on hover (unless active) */
 	width: 18px;
 	height: 18px;
 	display: none;
-	transition: opacity 0.2s, background-color 0.2s;
+	transition:
+		opacity 0.2s,
+		background-color 0.2s;
 }
 
 .channel-list-item .close::before {
@@ -1407,7 +1463,10 @@ background on hover (unless active) */
 	width: 18px;
 	height: 18px;
 	opacity: 0.4;
-	transition: opacity 0.2s, background-color 0.2s, transform 0.2s;
+	transition:
+		opacity 0.2s,
+		background-color 0.2s,
+		transform 0.2s;
 }
 
 .channel-list-item[data-type="lobby"] .add-channel::before {
@@ -1502,7 +1561,9 @@ background on hover (unless active) */
 	margin: 2px 0;
 	margin-bottom: 10px;
 	padding: 0 10px;
-	transition: border-color 0.2s, box-shadow 0.2s;
+	transition:
+		border-color 0.2s,
+		box-shadow 0.2s;
 	width: 100%;
 	height: 35px;
 	line-height: 35px;
@@ -1731,8 +1792,8 @@ textarea.input {
 }
 
 /**
-  * Toggled via JavaScript
-  */
+ * Toggled via JavaScript
+ */
 #sidebar .join-form {
 	padding: 0 18px 8px;
 }
@@ -1786,7 +1847,9 @@ textarea.input {
 	pointer-events: none;
 	opacity: 0;
 	transform: translateY(16px);
-	transition: transform 0.2s, opacity 0.2s;
+	transition:
+		transform 0.2s,
+		opacity 0.2s;
 	cursor: pointer;
 }
 
@@ -1805,7 +1868,9 @@ textarea.input {
 	color: var(--button-color);
 	border: 2px solid var(--button-color);
 	text-align: center;
-	transition: background 0.2s, color 0.2s;
+	transition:
+		background 0.2s,
+		color 0.2s;
 	box-shadow: 0 6px 10px 0 rgb(0 0 0 / 15%);
 }
 
@@ -2227,9 +2292,12 @@ textarea.input {
 
 #chat .toggle-content.opened .more-caret,
 /* Expand/Collapse link previews */
-#chat .toggle-button.opened,
+	#chat
+	.toggle-button.opened,
 /* Thumbnail toggle */
-#chat .msg:not(.closed)[data-type="condensed"] .toggle-button {
+	#chat
+	.msg:not(.closed)[data-type="condensed"]
+	.toggle-button {
 	/* Expanded status message toggle */
 	transform: rotate(90deg);
 }
@@ -2514,8 +2582,8 @@ part/quit messages where we don't load previews (adds a blank line otherwise) */
 	display: flex;
 }
 
-#connect .connect-row>.input,
-#connect .connect-row>.input-wrap {
+#connect .connect-row > .input,
+#connect .connect-row > .input-wrap {
 	flex-grow: 1;
 }
 
@@ -2757,7 +2825,9 @@ part/quit messages where we don't load previews (adds a blank line otherwise) */
 	padding: 10px;
 	margin-bottom: 16px;
 	border-radius: 2px;
-	transition: color 0.2s, background-color 0.2s;
+	transition:
+		color 0.2s,
+		background-color 0.2s;
 }
 
 #version-checker p,
@@ -2930,7 +3000,7 @@ part/quit messages where we don't load previews (adds a blank line otherwise) */
 	pointer-events: none;
 }
 
-#context-menu-container.passthrough>* {
+#context-menu-container.passthrough > * {
 	pointer-events: auto;
 }
 
@@ -3007,9 +3077,9 @@ part/quit messages where we don't load previews (adds a blank line otherwise) */
 }
 
 /**
-  * IRC Message Styling
-  * Colours are credit to http://clrs.cc/
-  */
+ * IRC Message Styling
+ * Colours are credit to http://clrs.cc/
+ */
 .irc-fg0 {
 	color: #fff;
 }
@@ -3827,8 +3897,7 @@ part/quit messages where we don't load previews (adds a blank line otherwise) */
 	font-size: 12px;
 }
 
-@media (width >=480px) {
-
+@media (width >= 480px) {
 	/* Fade out for long usernames */
 	#chat .from {
 		padding-left: 10px;
@@ -3836,16 +3905,15 @@ part/quit messages where we don't load previews (adds a blank line otherwise) */
 	}
 }
 
-@media (width <=768px) {
-
+@media (width <= 768px) {
 	/**
-	  * TODO Replace this with `@media (hover: hover)` when Firefox supports it
-	  * See:
-	  * - http://stackoverflow.com/a/28058919/1935861
-	  * - http://caniuse.com/#feat=css-media-interaction
-	  * - https://www.w3.org/TR/mediaqueries-4/
-	  * - https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover
-	  */
+	 * TODO Replace this with `@media (hover: hover)` when Firefox supports it
+	 * See:
+	 * - http://stackoverflow.com/a/28058919/1935861
+	 * - http://caniuse.com/#feat=css-media-interaction
+	 * - https://www.w3.org/TR/mediaqueries-4/
+	 * - https://developer.mozilla.org/en-US/docs/Web/CSS/@media/hover
+	 */
 	.tooltipped-no-touch:hover::before,
 	.tooltipped-no-touch:hover::after {
 		visibility: hidden;
@@ -3887,7 +3955,9 @@ part/quit messages where we don't load previews (adds a blank line otherwise) */
 		background: var(--overlay-bg-color);
 		opacity: 0;
 		visibility: hidden;
-		transition: opacity 160ms, visibility 160ms;
+		transition:
+			opacity 160ms,
+			visibility 160ms;
 		z-index: 9;
 	}
 
@@ -3943,7 +4013,7 @@ part/quit messages where we don't load previews (adds a blank line otherwise) */
 	}
 }
 
-@media (width <=479px) {
+@media (width <= 479px) {
 	.container {
 		max-width: 100%;
 		margin: 0;
@@ -3961,8 +4031,8 @@ part/quit messages where we don't load previews (adds a blank line otherwise) */
 		flex-direction: column;
 	}
 
-	#connect .connect-row>.input,
-	#connect .connect-row>.input-wrap {
+	#connect .connect-row > .input,
+	#connect .connect-row > .input-wrap {
 		flex-grow: 1;
 	}
 
@@ -4061,7 +4131,9 @@ part/quit messages where we don't load previews (adds a blank line otherwise) */
 	background: var(--overlay-bg-color);
 	visibility: hidden;
 	opacity: 0;
-	transition: opacity 0.2s, visibility 0.2s;
+	transition:
+		opacity 0.2s,
+		visibility 0.2s;
 	z-index: 999;
 	user-select: none;
 }
@@ -4129,17 +4201,25 @@ part/quit messages where we don't load previews (adds a blank line otherwise) */
 	opacity: 1;
 }
 
-#image-viewer>img {
+#image-viewer > img {
 	cursor: grab;
 	position: absolute;
 	transform-origin: 50% 50%;
 
 	/* Checkered background for transparent images */
-	background-position: 0 0, 10px 10px;
+	background-position:
+		0 0,
+		10px 10px;
 	background-size: 20px 20px;
 	background-image:
-		linear-gradient(45deg, #eee 25%, rgb(0 0 0 / 0%) 25%, rgb(0 0 0 / 0%) 75%, #eee 75%, #eee 100%),
-		linear-gradient(45deg, #eee 25%, #fff 25%, #fff 75%, #eee 75%, #eee 100%);
+		linear-gradient(
+			45deg,
+			#eee 25%,
+			rgb(0 0 0 / 0%) 25%,
+			rgb(0 0 0 / 0%) 75%,
+			#eee 75%,
+			#eee 100%
+		), linear-gradient(45deg, #eee 25%, #fff 25%, #fff 75%, #eee 75%, #eee 100%);
 }
 
 /* Correctly handle multiple successive whitespace characters.

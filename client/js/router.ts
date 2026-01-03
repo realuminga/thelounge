@@ -8,6 +8,7 @@ import Help from "../components/Windows/Help.vue";
 import Changelog from "../components/Windows/Changelog.vue";
 import NetworkEdit from "../components/Windows/NetworkEdit.vue";
 import SearchResults from "../components/Windows/SearchResults.vue";
+import NickTopMessageHours from "../components/Windows/NickTopMessageHours.vue";
 import RoutedChat from "../components/RoutedChat.vue";
 import {store} from "./store";
 
@@ -92,6 +93,11 @@ const router = createRouter({
 			path: "/chan-:id/search",
 			component: SearchResults,
 		},
+		{
+			name: "NickTopMessageHours",
+			path: "/chan-:id/nick-top-message-hours",
+			component: NickTopMessageHours,
+		},
 	],
 });
 
@@ -175,7 +181,11 @@ async function navigate(
 	}
 }
 
-function switchToChannel(channel: ClientChan, focusedMessageId?: number, focusedMessageTime?: number) {
+function switchToChannel(
+	channel: ClientChan,
+	focusedMessageId?: number,
+	focusedMessageTime?: number
+) {
 	const query: Record<string, number> = {};
 
 	if (focusedMessageId) {

@@ -9,7 +9,11 @@ import Chan, {Channel} from "../../models/chan.js";
 import Helper from "../../helper.js";
 import type {SearchableMessageStorage, DeletionRequest} from "./types.js";
 import Network from "../../models/network.js";
-import {SearchQuery, SearchResponse} from "../../../shared/types/storage.js";
+import {
+	NickTopMessageHoursResponse,
+	SearchQuery,
+	SearchResponse,
+} from "../../../shared/types/storage.js";
 
 type Migration = {version: number; stmts: string[]};
 type Rollback = {version: number; rollback_forbidden?: boolean; stmts: string[]};
@@ -646,6 +650,43 @@ class SqliteMessageStorage implements SearchableMessageStorage {
 			...query,
 			results: parseSearchRowsToMessages(rows).reverse(),
 		};
+	}
+
+	async nickTopMessageHours(
+		networkUuid: string,
+		nick: string
+	): Promise<NickTopMessageHoursResponse> {
+		await this.initDone.promise;
+
+		if (!this.isEnabled) {
+			return {networkUuid, nick, result: {}};
+		}
+
+		// Flush any pending batched writes before reading
+		await this.flushBatch();
+
+		const rows = await this.serialize_fetchall(
+			`SELECT strftime('%H', datetime(time / 1000, 'unixepoch')) AS hour,
+								COUNT(*) AS count
+						FROM messages
+						WHERE network = ?
+								AND type = 'message'
+								AND LOWER(json_extract(msg, '$.from.nick')) = ?
+						GROUP BY hour`,
+			networkUuid,
+			nick.toLowerCase()
+		);
+
+		const result: {[hour: number]: number} = {};
+
+		for (const row of rows) {
+			const r = row as Record<string, unknown>;
+			const hour = parseInt(r.hour as string, 10);
+			const count = r.count as number;
+			result[hour] = count;
+		}
+
+		return {networkUuid, nick, result};
 	}
 
 	async deleteMessages(req: DeletionRequest): Promise<number> {

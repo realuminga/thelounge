@@ -27,7 +27,14 @@ interface MessageStorage {
 }
 
 type SearchFunction = (query: SearchQuery) => Promise<SearchResponse>;
+type TopMessageHoursFunction = (
+	networkUuid: string,
+	nick: string
+) => Promise<{
+	[hour: number]: number;
+}>;
 
 export interface SearchableMessageStorage extends MessageStorage {
 	search: SearchFunction;
+	nickTopMessageHours: TopMessageHoursFunction;
 }
