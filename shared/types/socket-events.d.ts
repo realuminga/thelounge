@@ -5,7 +5,12 @@ import {SharedMsg, LinkPreview} from "./msg";
 import {SharedUser} from "./user";
 import {SharedChangelogData} from "./changelog";
 import {SharedConfiguration, LockedSharedConfiguration} from "./config";
-import {SearchResponse, SearchQuery} from "./storage";
+import {
+	SearchResponse,
+	SearchQuery,
+	NickTopMessageHoursData,
+	NickTopMessageHoursResponse,
+} from "./storage";
 
 type Session = {
 	current: boolean;
@@ -90,6 +95,7 @@ interface ServerToClientEvents {
 	init: EventHandler<{active: number; networks: SharedNetwork[]; token?: string}>;
 
 	"search:results": (response: SearchResponse) => void;
+	"nickTopMessageHours:results": (response: NickTopMessageHoursResponse) => void;
 
 	quit: EventHandler<{network: string}>;
 
@@ -179,6 +185,8 @@ interface ClientToServerEvents {
 	"history:clear": EventHandler<{target: number}>;
 
 	search: EventHandler<SearchQuery>;
+
+	nickTopMessageHours: EventHandler<NickTopMessageHoursData>;
 }
 
 // Socket.IO requires these interfaces to be defined even if empty

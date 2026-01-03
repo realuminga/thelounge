@@ -830,6 +830,11 @@ function initializeClient(
 			socket.emit("search:results", results);
 		});
 
+		socket.on("nickTopMessageHours", async (data) => {
+			const result = await client.nickTopMessageHours(data.networkUuid, data.nick);
+			socket.emit("nickTopMessageHours:results", result);
+		});
+
 		socket.on("mute:change", ({target, setMutedTo}) => {
 			const networkAndChan = client.find(target);
 

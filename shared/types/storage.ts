@@ -10,3 +10,12 @@ export type SearchQuery = {
 export type SearchResponse = SearchQuery & {
 	results: SharedMsg[];
 };
+
+export type NickTopMessageHoursData = {
+	networkUuid: string;
+	nick: string;
+};
+
+export type NickTopMessageHoursResponse = NickTopMessageHoursData & {
+	result: {[hour: number]: number};
+};
